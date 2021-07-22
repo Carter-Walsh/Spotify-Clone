@@ -19,6 +19,8 @@ const Dashboard = ({ token }) => {
     function spotifyRequest(event) {
         setSearch(event.target.value);
         
+        if (!search) return;
+        
         spotifyApi.searchTracks(search).then(res => {
             let results = res.tracks.items;
             
@@ -52,7 +54,7 @@ const Dashboard = ({ token }) => {
                 />
                 })
             }
-            <Player token={token} />
+            <Player token={token} selectedSongUri={selectedSongUri}/>
         </div>
     )
 };

@@ -23,7 +23,7 @@ const App = () => {
 
     return (
         <div className="App">
-            {token ? <Dashboard token={token}/> : <Login />}
+            { token ? <Dashboard token={token}/> : <Login /> }
         </div>
     );
 }

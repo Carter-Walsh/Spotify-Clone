@@ -1,10 +1,14 @@
 import React from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
 
-const Player = ({ token }) => {
+const Player = ({ token, selectedSongUri }) => {
     return (
-        <div>Player</div>
-        // <SpotifyPlayer />
+        <div>
+            <SpotifyPlayer 
+                token={token}
+                uris={selectedSongUri ? [selectedSongUri] : []}
+            />
+        </div>
     )
 };
 
