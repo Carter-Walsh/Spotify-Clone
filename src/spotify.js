@@ -6,20 +6,20 @@ const redirectUri = "http://localhost:3000";
 // const clientSecret = "f52cec7942dd463ca02fa55969afbca8";
 
 const scopes = [
-  "user-read-currently-playing",
-  "user-read-recently-played",
-  "user-read-playback-state",
-  "user-top-read",
-  "user-modify-playback-state",
+  "user-read-currently-playing", // read access to a user's currently playing content
+  "user-read-recently-played", // read access to a user's recently played tracks
+  "user-read-playback-state", // read access to a user's player state
+  "user-top-read", // read access to a user's top artists and trakcs
+  "user-modify-playback-state", // write access to a user's playback state
 ];
 
 export const getTokenFromResponse = () => {
     return window.location.hash
-    .substring(1)
-    .split("&")
+    .substring(1) // retrieve everything after the #
+    .split("&") // split at every & to separate queries and return an array
     .reduce((initial, item) => {
-      var parts = item.split("=");
-      initial[parts[0]] = decodeURIComponent(parts[1]);
+      let parts = item.split("="); // separating the query now to key and value into an array
+      initial[parts[0]] = decodeURIComponent(parts[1]);// parts[1] is the actual access token
 
       return initial;
     }, {});
