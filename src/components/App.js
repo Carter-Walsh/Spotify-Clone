@@ -1,8 +1,9 @@
-import '../App.css';
 import React, { useEffect, useState } from "react";
 import Login from './Login';
+import Dashboard from './Dashboard';
 import { getTokenFromResponse } from '../spotify';
 import SpotifyWebApi from "spotify-web-api-js";
+import '../App.css';
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -22,7 +23,7 @@ const App = () => {
 
     return (
         <div className="App">
-            {token ? <h1>I am logged in</h1> : <Login />}
+            {token ? <Dashboard token={token}/> : <Login />}
         </div>
     );
 }
