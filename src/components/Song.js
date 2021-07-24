@@ -1,14 +1,15 @@
 import React from "react";
+import "../styles/Songs.css";
 
 const Song = ({ albumImage, artistName, albumName, itemUri, handleClick }) => {
     
     return (
-        <div onClick={() => handleClick(itemUri)}>
-            <div>
+        <div className="individual-song" onClick={() => handleClick(itemUri)}>
                 <img src={albumImage} alt="Album Cover" />
+            <div className="song-artist-text">
+                <p>{artistName}</p>
+                <p>{albumName}</p>
             </div>
-            <p>{artistName}</p>
-            <p>{albumName}</p>
         </div>
     );
 };

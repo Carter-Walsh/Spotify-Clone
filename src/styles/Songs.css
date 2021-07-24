@@ -1,0 +1,10 @@
+.individual-song {
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.song-artist-text {
+    margin: 1rem;
+    color: white;
+}

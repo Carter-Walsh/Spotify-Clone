@@ -1,0 +1,29 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15%;
+    height: 100vh;
+    background: #000000;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 20rem;
+    border-radius: 20px;
+    background-color: #1DB954;
+    color: #000000;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.login-header {
+    color: #1DB954;
+    font-size: 7rem;
+}

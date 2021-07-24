@@ -3,7 +3,7 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import { getTokenFromResponse } from '../spotify';
 import SpotifyWebApi from "spotify-web-api-js";
-import '../App.css';
+import '../styles/App.css';
 
 const spotifyApi = new SpotifyWebApi();
 

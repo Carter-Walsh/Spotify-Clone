@@ -1,0 +1,39 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.dashboard-header-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.search-bar {
+    width: 30%;
+    height: 3rem;
+    font-size: 1rem;
+    padding-left: .5rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    align-self: center;
+    background-color: #1DB954;
+    color: white;
+}
+
+::placeholder {
+    color:white;
+}
+
+.songs-container {
+    /* flex-grow: 1; */
+    overflow-y: auto;
+    background-image: linear-gradient(#B272A6, black);
+}
