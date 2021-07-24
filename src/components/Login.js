@@ -4,7 +4,7 @@ import { accessUrl } from "../spotify";
 const Login = () => {
     return (
         <div>
-            <a href={accessUrl}>Login to Spotify</a>
+            <a title="login-button" href={accessUrl}>Login to Spotify</a>
         </div>
     );
 };
