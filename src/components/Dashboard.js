@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Song from "./Song";
 import Player from "./Player";
 import SpotifyWebApi from "spotify-web-api-js";
+import "../styles/Dashboard.css";
 
 const Dashboard = ({ token }) => {
     
@@ -40,22 +41,26 @@ const Dashboard = ({ token }) => {
     }
 
     return (
-        <div>
-            <h1 title="header">Dashboard</h1>
-            <input placeholder="Search for Artists/Songs" value={search} onChange={spotifyRequest}/>
-            {
-                searchResults.map(item => {
-                    return <Song key={item.id} 
-                    itemUri={item.itemUri}
-                    albumImage={item.albumImage} 
-                    artistName={item.artistName} 
-                    albumName={item.albumName} 
-                    handleClick={handleClick} 
-                />
-                })
-            }
-            <Player title="player" token={token} selectedSongUri={selectedSongUri}/>
-        </div>
+            <div className="dashboard-container">
+                <div className="dashboard-header-bg">
+                    <h1 className="dashboard-header" title="header">Spotify Dashboard</h1>
+                <input className="search-bar" placeholder="Search for Artists/Songs..." value={search} onChange={spotifyRequest}/>
+                </div>
+                <div className="songs-container">
+                    {
+                        searchResults.map(item => {
+                            return <Song key={item.id} 
+                            itemUri={item.itemUri}
+                            albumImage={item.albumImage} 
+                            artistName={item.artistName} 
+                            albumName={item.albumName} 
+                            handleClick={handleClick} 
+                        />
+                        })
+                    }
+                </div>
+                <Player title="player" token={token} selectedSongUri={selectedSongUri}/>
+            </div>
     )
 };
 
