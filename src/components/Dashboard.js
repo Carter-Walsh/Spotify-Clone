@@ -35,13 +35,13 @@ const Dashboard = ({ token }) => {
                         artistName: item.artists[0].name
                     }
                 })
-                )
-            });
-        }
+            )
+        });
+    }
 
     return (
         <div>
-            <h1>Dashboard</h1>
+            <h1 title="header">Dashboard</h1>
             <input placeholder="Search for Artists/Songs" value={search} onChange={spotifyRequest}/>
             {
                 searchResults.map(item => {
@@ -54,7 +54,7 @@ const Dashboard = ({ token }) => {
                 />
                 })
             }
-            <Player token={token} selectedSongUri={selectedSongUri}/>
+            <Player title="player" token={token} selectedSongUri={selectedSongUri}/>
         </div>
     )
 };
