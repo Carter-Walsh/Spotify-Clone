@@ -1,0 +1,11 @@
+.individual-artist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+}
+
+.artist-text {
+    color: white;
+    margin-bottom: 1rem;
+}

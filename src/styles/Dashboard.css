@@ -33,7 +33,23 @@
 }
 
 .songs-container {
-    /* flex-grow: 1; */
     overflow-y: auto;
+    height: 100vh;
     background-image: linear-gradient(#B272A6, black);
+}
+
+.top-artists-container {
+    overflow-y: auto;
+    height: 100vh;
+    background-image: linear-gradient(#B272A6, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;    
+}
+
+.top-artists-header {
+    color: white;
+    margin: 1rem;
 }
