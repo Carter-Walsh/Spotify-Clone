@@ -8,6 +8,9 @@ const scopes = [
   "user-read-playback-state", // read access to a user's player state
   "user-top-read", // read access to a user's top artists and trakcs
   "user-modify-playback-state", // write access to a user's playback state
+  "user-read-email",
+  "user-read-private",
+  "streaming",
 ];
 
 export const getTokenFromResponse = () => {
