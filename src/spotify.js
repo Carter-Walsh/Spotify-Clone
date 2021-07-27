@@ -1,6 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "7edf92de95194f8a8d4da091d1380be9";
-const redirectUri = "https://spotify-clone-cw.herokuapp.com/";
+const redirectUri = "https://zealous-franklin-a7776c.netlify.app/";
 
 const scopes = [
   "user-read-currently-playing", // read access to a user's currently playing content
