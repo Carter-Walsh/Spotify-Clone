@@ -23,6 +23,7 @@ const Dashboard = ({ token }) => {
     useEffect(() => {
         spotifyApi.getMe().then(res => {
             let displayName = res.display_name;
+            console.log(res);
             setUserFirstName(displayName.split(" ")[0]);
         });
         // eslint-disable-next-line
