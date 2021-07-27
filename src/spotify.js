@@ -1,6 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "7edf92de95194f8a8d4da091d1380be9";
-const redirectUri = "http://localhost:3000";
+const redirectUri = "https://spotify-clone-cw.herokuapp.com/";
 
 // Do I need this?
 // const clientSecret = "f52cec7942dd463ca02fa55969afbca8";
