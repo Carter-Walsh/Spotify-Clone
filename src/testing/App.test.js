@@ -11,6 +11,3 @@ test("App returns a value", () => {
     const { container } = render(<App />);
     expect(container.firstChild).not.toBeNull();
 });
-
-
-

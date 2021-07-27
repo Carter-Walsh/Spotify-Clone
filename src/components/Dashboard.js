@@ -43,7 +43,6 @@ const Dashboard = ({ token }) => {
         // eslint-disable-next-line
     }, []);
 
-
     const spotifyRequest = (event) => {
         setSearch(event.target.value);
         

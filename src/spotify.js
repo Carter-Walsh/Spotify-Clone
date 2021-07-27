@@ -17,11 +17,13 @@ export const getTokenFromResponse = () => {
     return window.location.hash
     .substring(1) // retrieve everything after the #
     .split("&") // split at every & to separate queries and return an array
-    .reduce((initial, item) => {
-      let parts = item.split("="); // separating the query now to key and value into an array
-      initial[parts[0]] = decodeURIComponent(parts[1]);// parts[1] is the actual access token
+    .reduce((accumulator, currentValue) => {
+      console.log(accumulator);
+      console.log(currentValue);
+      let parts = currentValue.split("="); // separating the query now to key and value into an array
+      accumulator[parts[0]] = decodeURIComponent(parts[1]);// parts[1] is the actual access token
 
-      return initial;
+      return accumulator;
     }, {});
 }
 
