@@ -25,6 +25,8 @@ const Dashboard = ({ token }) => {
             let displayName = res.display_name;
             console.log(res);
             setUserFirstName(displayName.split(" ")[0]);
+        }).catch(err => {
+            console.log({error: err});
         });
         // eslint-disable-next-line
     }, []);
