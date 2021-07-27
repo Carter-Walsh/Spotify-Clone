@@ -23,7 +23,6 @@ const Dashboard = ({ token }) => {
     useEffect(() => {
         spotifyApi.getMe().then(res => {
             let displayName = res.display_name;
-            console.log(res);
             setUserFirstName(displayName.split(" ")[0]);
         }).catch(err => {
             console.log({error: err});
@@ -42,6 +41,8 @@ const Dashboard = ({ token }) => {
                     name: artist.name
                 }
             }));
+        }).catch(err => {
+            console.log({error: err});
         });
         // eslint-disable-next-line
     }, []);
@@ -65,6 +66,8 @@ const Dashboard = ({ token }) => {
                     }
                 })
             )
+        }).catch(err => {
+            console.log({error: err});
         });
     }
 
