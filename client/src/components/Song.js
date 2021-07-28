@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Songs.css";
+import "../styles/Song.css";
 
 const Song = ({ albumImage, artistName, songName, itemUri, handleClick }) => {
     
