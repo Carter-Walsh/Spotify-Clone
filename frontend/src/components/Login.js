@@ -18,7 +18,6 @@ const scopes = [
 
 const AUTH_URL = `${authEndpoint}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}`
 
-
 const Login = () => {
     return (
             <div className="login-container">

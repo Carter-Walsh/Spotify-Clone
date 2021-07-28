@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Song from "./Song";
 import TopArtists from "./TopArtists";
 import SpotifyWebApi from "spotify-web-api-node";
+import Player from "./Player";
 import useAuth from "../useAuth";
 import "../styles/Dashboard.css";
 
@@ -16,9 +17,11 @@ const Dashboard = ({ code }) => {
     const [searchResults, setSearchResults] = useState([]);
     const [userFirstName, setUserFirstName] = useState("");
     const [userTopArtists, setUserTopArtists] = useState([]);
+    const [selectedSongUri, setSelectedSongUri] = useState();
 
+    
     const handleClick = (itemUri) => {
-        // setSelectedSongUri(itemUri);
+        setSelectedSongUri(itemUri);
     }
 
     useEffect(() => {
@@ -108,7 +111,7 @@ const Dashboard = ({ code }) => {
             <div className={!search ? "top-artists-container" : "songs-container"}>
                 {!search ? topArtists : songList}
             </div>
-
+            <Player accessToken={accessToken} selectedSongUri={selectedSongUri} />
         </div>
     );
 };

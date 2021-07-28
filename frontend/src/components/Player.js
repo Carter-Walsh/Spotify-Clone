@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
 
-const Player = ({ token, selectedSongUri }) => {
+const Player = ({ accessToken, selectedSongUri }) => {
     const [play, setPlay] = useState(false);
 
     useEffect(() => {
         setPlay(true)
     }, [selectedSongUri]);
 
+
+    if (!accessToken) return null;
     return (
         <div>
             <SpotifyPlayer 
-                token={token}
+                token={accessToken}
                 showSaveIcon
                 callback={state => {
                     if (!state.isPlaying) setPlay(false);
                 }}
                 play={play}
-                uris={selectedSongUri ? [selectedSongUri] : null}
+                uris={selectedSongUri ? [selectedSongUri] : []}
             />
         </div>
     )
