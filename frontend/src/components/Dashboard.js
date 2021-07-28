@@ -3,7 +3,7 @@ import Song from "./Song";
 import TopArtists from "./TopArtists";
 import SpotifyWebApi from "spotify-web-api-node";
 import Player from "./Player";
-import useAuth from "../useAuth";
+import useSpotify from "../useSpotify";
 import "../styles/Dashboard.css";
 
 const spotifyApi = new SpotifyWebApi({
@@ -11,14 +11,13 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 const Dashboard = ({ code }) => {
-    const accessToken = useAuth(code);
+    const accessToken = useSpotify(code);
 
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [userFirstName, setUserFirstName] = useState("");
     const [userTopArtists, setUserTopArtists] = useState([]);
     const [selectedSongUri, setSelectedSongUri] = useState();
-
     
     const handleClick = (itemUri) => {
         setSelectedSongUri(itemUri);
@@ -30,7 +29,7 @@ const Dashboard = ({ code }) => {
     }, [accessToken]);
 
     useEffect(() => {
-        if (!accessToken) return 
+        if (!accessToken) return;
 
         spotifyApi.getMe().then(res => {
             const displayName = res.body.display_name;
@@ -38,7 +37,6 @@ const Dashboard = ({ code }) => {
         }).catch(err => {
             console.log({error: err});
         });
-        // eslint-disable-next-line
     }, [accessToken]);
 
     useEffect(() => {
@@ -54,7 +52,6 @@ const Dashboard = ({ code }) => {
                     name: artist.name
                 }
             }));
-            
         }).catch(err => {
             console.log(err);
         });

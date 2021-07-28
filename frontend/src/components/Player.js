@@ -14,12 +14,12 @@ const Player = ({ accessToken, selectedSongUri }) => {
         <div>
             <SpotifyPlayer 
                 token={accessToken}
+                uris={selectedSongUri ? [selectedSongUri] : null}
                 showSaveIcon
                 callback={state => {
                     if (!state.isPlaying) setPlay(false);
                 }}
                 play={play}
-                uris={selectedSongUri ? [selectedSongUri] : []}
             />
         </div>
     )

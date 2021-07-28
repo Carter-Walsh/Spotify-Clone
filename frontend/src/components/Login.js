@@ -11,18 +11,19 @@ const scopes = [
     "user-top-read", // read access to a user's top artists and trakcs
     "user-modify-playback-state", // write access to a user's playback state
     "user-read-email",
+    "user-library-read",
     "user-read-private",
     "streaming",
   ];
 
 
-const AUTH_URL = `${authEndpoint}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}`
+const authorizationUrl = `${authEndpoint}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}`
 
 const Login = () => {
     return (
             <div className="login-container">
             <h1 className="login-header">Spotify</h1>
-                <a className="login-btn" title="login-button" href={AUTH_URL}>Login With Spotify</a>
+                <a className="login-btn" title="login-button" href={authorizationUrl}>Login With Spotify</a>
             </div>
     );
 };

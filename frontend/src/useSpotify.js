@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function useAuth(code) {
+export default function useSpotify(code) {
 
   const [accessToken, setAccessToken] = useState()
   const [refreshToken, setRefreshToken] = useState()
@@ -15,12 +15,12 @@ export default function useAuth(code) {
         setAccessToken(res.data.accessToken)
         setRefreshToken(res.data.refreshToken)
         setExpiresIn(res.data.expiresIn)
-        window.history.pushState({}, null, "/")
+        window.history.pushState(null, null, "/")
       }).catch((err) => {
         console.log(err)
-      })
+      });
 
-  }, [code])
+  }, [code]);
 
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
@@ -33,8 +33,8 @@ export default function useAuth(code) {
           setAccessToken(res.data.accessToken)
           setExpiresIn(res.data.expiresIn)
         })
-        .catch(() => {
-          window.location = "/"
+        .catch((err) => {
+          console.log({error: err})
         })
     }, (expiresIn - 60) * 1000)
 
@@ -42,5 +42,5 @@ export default function useAuth(code) {
 
   }, [refreshToken, expiresIn])
 
-  return accessToken
+  return accessToken;
 }
