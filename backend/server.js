@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.static('build'));
 
 app.post("/login", (req, res) => {
     const code = req.body.code;
@@ -48,6 +49,8 @@ app.post("/refresh", (req, res) => {
     });
 });
 
-app.listen(3001, () => {
-    console.log("server started listening on port 3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
