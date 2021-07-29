@@ -19,7 +19,7 @@ app.post("/login", (req, res) => {
     const code = req.body.code;
 
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: "http://localhost:3000",
+        redirectUri: "https://spotify-clone-cw.herokuapp.com/",
         clientId: "7edf92de95194f8a8d4da091d1380be9",
         clientSecret: "f52cec7942dd463ca02fa55969afbca8"
     });
@@ -39,7 +39,7 @@ app.post("/refresh", (req, res) => {
     const refreshToken = req.body.refreshToken;
 
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: "http://localhost:3000",
+        redirectUri: "https://spotify-clone-cw.herokuapp.com/",
         clientId: "7edf92de95194f8a8d4da091d1380be9",
         clientSecret: "f52cec7942dd463ca02fa55969afbca8",
         refreshToken: refreshToken

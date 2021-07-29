@@ -3,7 +3,7 @@ import "../styles/Login.css";
 
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "7edf92de95194f8a8d4da091d1380be9";
-const redirectUri = "http://localhost:3000";
+const redirectUri = "https://spotify-clone-cw.herokuapp.com/";
 const scopes = [
     "user-read-currently-playing", // read access to a user's currently playing content
     "user-read-recently-played", // read access to a user's recently played tracks
