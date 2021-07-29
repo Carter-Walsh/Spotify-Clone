@@ -9,7 +9,7 @@ export default function useSpotify(code) {
 
   useEffect(() => {
 
-    axios.post("/login", {
+    axios.post("https://spotify-clone-cw.herokuapp.com/login", {
         code,
       }).then(res => {
         setAccessToken(res.data.accessToken)
