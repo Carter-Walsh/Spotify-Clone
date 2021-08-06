@@ -2,26 +2,20 @@ const express = require("express");
 const SpotifyWebApi = require("spotify-web-api-node");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const path = require("path");
+require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
-app.use(express.static('build'));
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../frontend/build/index.html'))
-});
 
 app.post("/login", (req, res) => {
     const code = req.body.code;
 
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: "https://spotify-clone-cw.herokuapp.com/",
-        clientId: "7edf92de95194f8a8d4da091d1380be9",
-        clientSecret: "f52cec7942dd463ca02fa55969afbca8"
+        redirectUri: process.env.REDIRECT_URI,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET
     });
 
     spotifyApi.authorizationCodeGrant(code).then(data => {
@@ -39,9 +33,9 @@ app.post("/refresh", (req, res) => {
     const refreshToken = req.body.refreshToken;
 
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: "https://spotify-clone-cw.herokuapp.com/",
-        clientId: "7edf92de95194f8a8d4da091d1380be9",
-        clientSecret: "f52cec7942dd463ca02fa55969afbca8",
+        redirectUri: process.env.REDIRECT_URI,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
         refreshToken: refreshToken
     });
 

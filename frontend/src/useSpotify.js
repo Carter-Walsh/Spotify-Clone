@@ -9,7 +9,7 @@ export default function useSpotify(code) {
 
   useEffect(() => {
 
-    axios.post("https://spotify-clone-cw.herokuapp.com/login", {
+    axios.post("http://localhost:3001/login", {
         code,
       }).then(res => {
         setAccessToken(res.data.accessToken)
@@ -26,7 +26,7 @@ export default function useSpotify(code) {
     if (!refreshToken || !expiresIn) return
 
     const interval = setInterval(() => {
-      axios.post("/refresh", {
+      axios.post("http://localhost:3001/refresh", {
           refreshToken,
         })
         .then(res => {
