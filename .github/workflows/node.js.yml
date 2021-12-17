@@ -45,6 +45,3 @@ jobs:
       run: | 
         cd frontend
         npm test
-    
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.6
