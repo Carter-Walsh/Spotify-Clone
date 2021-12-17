@@ -11,12 +11,3 @@ test("dashboard returns a value", () => {
     const { container } = render(<Dashboard />)
     expect(container.firstChild).not.toBeNull();
 });
-
-test("title should appear", () => {
-    const { queryByTitle } = render(<Dashboard />);
-    const header = queryByTitle("header");
-    expect(header.textContent).toBe("Dashboard");
-});
-
-
-

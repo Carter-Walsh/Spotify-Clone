@@ -21,7 +21,7 @@ test("check login button rendered correctly", () => {
 test("login prints the correct text", () => {
     const { queryByTitle } = render (<Login />)
     const btn = queryByTitle("login-button");
-    expect(btn.textContent).toBe("Login to Spotify");
+    expect(btn.textContent).toBe("Login With Spotify");
 });
 
 test("button was clicked", () => {
